@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Definitivo QN85B</title>
+    <!-- Conexión al archivo CSS para el diseño -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="control-container">
+        <!-- SEGMENTO 1: Ajustes superiores -->
+        <div class="segmento-superior">
+            <button class="btn btn-power" onclick="enviarComando('KEY_POWER')">On</button>
+            <button class="btn btn-setup" onclick="configurarIP()">IP</button>
+            <button id="btn-status" class="btn btn-status-desconectado" onclick="forzarReconexion()"> 🔴 </button>
+        </div>
+
+        <!-- SEGMENTO 2: Matriz de Volumen, Silencio, Menú y Canales -->
+        <div class="segmento-matriz">
+            <!-- Fila 1 de la matriz -->
+            <button class="btn" onclick="enviarComando('KEY_VOLUP')">VOL +</button>
+            <button class="btn btn-mute" onclick="enviarComando('KEY_MUTE')">MUTE</button>
+            <button class="btn" onclick="enviarComando('KEY_CHUP')">CH▲</button>
+
+            <!-- Fila 2 de la matriz -->
+            <button class="btn" onclick="enviarComando('KEY_VOLDOWN')">VOL -</button>
+            <button class="btn btn-menu" onclick="enviarComando('KEY_MENU')">MENU</button>
+            <button class="btn" onclick="enviarComando('KEY_CHDOWN')">CH▼</button>
+        </div>
+
+        <!-- NUEVO SEGMENTO: Menú Inteligente y Volver (Atrás) -->
+        <div class="segmento-intermedio">
+            <button class="btn btn-home" onclick="enviarComando('KEY_HOME')">Smart Menu</button>
+            <button class="btn btn-back" onclick="enviarComando('KEY_RETURN')">↩ Back</button>
+        </div>
+
+        <!-- SEGMENTO 3: Panel Táctil Inteligente -->
+        <div class="segmento-touch">
+            <div id="touchpad" class="touchpad-area">
+                <span class="touchpad-label">PANEL TÁCTIL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conexión al archivo JavaScript para la lógica -->
+    <script src="script.js"></script>
+</body>
+</html>
