@@ -4,39 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control Definitivo QN85B</title>
-    <!-- Conexión al archivo CSS para el diseño -->
-    <link rel="stylesheet" href="style.css"> 
+    <!-- Vinculamos tu archivo CSS (asumiendo que se llama styles.css) -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <div class="control-container">
-        <!-- SEGMENTO 1: Ajustes superiores -->
+        <!-- Segmento Superior -->
         <div class="segmento-superior">
             <button class="btn btn-power" onclick="enviarComando('KEY_POWER')">On</button>
-            <button class="btn btn-setup" onclick="configurarIP()">IP</button>
-            <button id="btn-status" class="btn btn-status-desconectado" onclick="forzarReconexion()"> 🔴 </button>
+            
+            <!-- ESTE ES EL BOTÓN DE LA IP QUE TE FALTA -->
+            <!-- Al hacerle clic, llama a la función configurarIP() de tu JavaScript -->
+            <button id="btn-status" class="btn btn-status-desconectado" onclick="configurarIP()">🔴 IP</button>
+            
+            <button class="btn btn-reconectar" onclick="forzarReconexion()">Reconectar</button>
         </div>
 
-        <!-- SEGMENTO 2: Matriz de Volumen, Silencio, Menú y Canales -->
+        <!-- Segmento Matriz (Volumen y Canales) -->
         <div class="segmento-matriz">
-            <!-- Fila 1 de la matriz -->
             <button class="btn" onclick="enviarComando('KEY_VOLUP')">VOL +</button>
-            <button class="btn btn-mute" onclick="enviarComando('KEY_MUTE')">MUTE</button>
+            <button class="btn" onclick="enviarComando('KEY_MUTE')">MUTE</button>
             <button class="btn" onclick="enviarComando('KEY_CHUP')">CH▲</button>
-
-            <!-- Fila 2 de la matriz -->
             <button class="btn" onclick="enviarComando('KEY_VOLDOWN')">VOL -</button>
-            <button class="btn btn-menu" onclick="enviarComando('KEY_MENU')">MENU</button>
+            <button class="btn" onclick="enviarComando('KEY_MENU')">MENU</button>
             <button class="btn" onclick="enviarComando('KEY_CHDOWN')">CH▼</button>
         </div>
 
-        <!-- NUEVO SEGMENTO: Menú Inteligente y Volver (Atrás) -->
+        <!-- Segmento Intermedio (Smart Menu y Atrás) -->
         <div class="segmento-intermedio">
             <button class="btn btn-home" onclick="enviarComando('KEY_HOME')">Smart Menu</button>
-            <button class="btn btn-back" onclick="enviarComando('KEY_RETURN')">↩ Back</button>
+            <button class="btn btn-back" onclick="enviarComando('KEY_RETURNS')">↩ Back</button>
         </div>
 
-        <!-- SEGMENTO 3: Panel Táctil Inteligente -->
+        <!-- Segmento Touch (Panel Táctil) -->
         <div class="segmento-touch">
             <div id="touchpad" class="touchpad-area">
                 <span class="touchpad-label">PANEL TÁCTIL</span>
@@ -44,7 +45,8 @@
         </div>
     </div>
 
-    <!-- Conexión al archivo JavaScript para la lógica -->
+    <!-- Vinculamos tu archivo JavaScript (asumiendo que se llama script.js) -->
+    <!-- DEBE IR AL FINAL DEL BODY para que encuentre los ID "btn-status" y "touchpad" -->
     <script src="script.js"></script>
 </body>
 </html>
